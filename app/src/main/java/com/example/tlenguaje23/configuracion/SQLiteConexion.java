@@ -20,6 +20,8 @@ public class SQLiteConexion extends SQLiteOpenHelper
     public void onCreate(SQLiteDatabase sqLiteDatabase)
     {
         //Creacion de objetos de Base de Datos
+        sqLiteDatabase.execSQL(Transacciones.CreateTBPersonas);
+
 
 
     }
@@ -27,6 +29,9 @@ public class SQLiteConexion extends SQLiteOpenHelper
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1)
     {
+        //Eliminar las Tablas
+        sqLiteDatabase.execSQL(Transacciones.DropTBPersonas);
+
 
     }
 }
