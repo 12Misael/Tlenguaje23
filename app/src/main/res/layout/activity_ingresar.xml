@@ -15,8 +15,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
         android:ems="10"
+        android:hint="Codigo"
         android:inputType="textPersonName"
-        android:text="Codigo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.547"
@@ -32,14 +32,14 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
         android:ems="10"
+        android:hint="Nombre"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.125"
-        tools:text="Nombres" />
+        app:layout_constraintVertical_bias="0.125" />
 
     <EditText
         android:id="@+id/txtapellidos"
@@ -49,14 +49,14 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
         android:ems="10"
+        android:hint="Apellido"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.21"
-        tools:text="Apellidos" />
+        app:layout_constraintVertical_bias="0.21" />
 
     <EditText
         android:id="@+id/txtedad"
@@ -66,8 +66,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
         android:ems="10"
+        android:hint="Edad"
         android:inputType="textPersonName"
-        android:text="Edad"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -83,8 +83,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
         android:ems="10"
+        android:hint="Correo"
         android:inputType="textPersonName"
-        android:text="Correo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
