@@ -23,18 +23,32 @@ public class ActivityIngresar extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingresar);
-        codigo = (EditText) findViewById(R.id.txtcodigo);
-        nombres = (EditText) findViewById(R.id.txtnombres);
-        apellidos = (EditText) findViewById(R.id.txtapellidos);
-        edad = (EditText) findViewById(R.id.txtedad);
-        correo = (EditText) findViewById(R.id.txtcorreo);
 
-        btnagregar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AgregarPersonas();
-            }
-        });
+        try {
+
+            codigo = (EditText) findViewById(R.id.txtcodigo);
+            nombres = (EditText) findViewById(R.id.txtnombres);
+            apellidos = (EditText) findViewById(R.id.txtapellidos);
+            edad = (EditText) findViewById(R.id.txtedad);
+            correo = (EditText) findViewById(R.id.txtcorreo);
+            btnagregar = (Button)findViewById(R.id.btningresar);
+
+            btnagregar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AgregarPersonas();
+                }
+            });
+
+        }
+        catch (Exception ex)
+        {
+            Toast.makeText(this, ex.toString(),Toast.LENGTH_SHORT).show();
+
+        }
+
+
+
 
 
 
@@ -43,22 +57,30 @@ public class ActivityIngresar extends AppCompatActivity {
 
     private void AgregarPersonas()
     {
-        SQLiteConexion conexion = new SQLiteConexion(this,
-                Transacciones.NameDatabase,
-                null,
-                1);
+        try {
+            SQLiteConexion conexion = new SQLiteConexion(this,
+                    Transacciones.NameDatabase,
+                    null,
+                    1);
 
-        SQLiteDatabase db = conexion.getWritableDatabase();
-        ContentValues valores = new ContentValues();
-        valores.put(Transacciones.nombres, nombres.getText().toString());
-        valores.put(Transacciones.apellidos, apellidos.getText().toString());
-        valores.put(Transacciones.edad, edad.getText().toString());
-        valores.put(Transacciones.coreo, correo.getText().toString());
+            SQLiteDatabase db = conexion.getWritableDatabase();
+            ContentValues valores = new ContentValues();
+            valores.put(Transacciones.nombres, nombres.getText().toString());
+            valores.put(Transacciones.apellidos, apellidos.getText().toString());
+            valores.put(Transacciones.edad, edad.getText().toString());
+            valores.put(Transacciones.coreo, correo.getText().toString());
 
-        Long resultado = db.insert(Transacciones.tablapersonas, Transacciones.id, valores);
-        Toast.makeText(this, "Ingreado Con Exito", Toast.LENGTH_SHORT).show();
+            Long resultado = db.insert(Transacciones.tablapersonas, Transacciones.id, valores);
+            Toast.makeText(this, "Ingreado Con Exito", Toast.LENGTH_SHORT).show();
 
-        CleanPantalla();
+            CleanPantalla();
+
+        }
+        catch (Exception ex)
+        {
+            ex.toString();
+        }
+
     }
 
     private void CleanPantalla() {
